@@ -22,7 +22,7 @@
             {{/* $filteredPosts := where (where .Site.Pages "Type" "blog") "UniqueID" "!= ".UniqueID }}
             {{ $relatedPosts := shuffle $filteredPosts | first 3 */}}
 
-            {{ $latestPosts := where .Site.RegularPages ".Section" "in" (slice "posts" "sections") }}
+            {{ $latestPosts := where .Site.RegularPages ".Section" "in" (slice "posts" "sections" "games") }}
             {{ $latestPosts = $latestPosts | symdiff $featured}}
             {{ $latestPosts = $latestPosts.ByDate.Reverse | first 6 }}
 
